@@ -17,21 +17,21 @@ A React Native Drawer Navigation Template for using with some of the most useful
 You can find the Redux's configuration at <br/>
 <b>Router.js <b/> <br/> <br/>
 
-This file is wrapping all the application with <b>Provider<b/> component.
+This file is wrapping all the application with <b> Provider <b/> component.
 
-# Configuration Files
-These are the main files you will need to change during the development.
-Router Configuration <br/>
+# Configuration
+These are the main files you will need to change during the development.<br/>
+- Router Configuration <br/>
 The Router's configuration takes care of the screens and navigation. <br/>
-RouterSettings.js
+RouterSettings.js <br/><br/>
 
-Drawer Navigation Configuration <br/>
+- Drawer Navigation Configuration <br/>
 The DrawerNavigationSettings' configuration takes care of the layout. <br/>
-DrawerNavigationSettings.js
+DrawerNavigationSettings.js <br/><br/>
 
-FireBase Configuration <br/>
+- FireBase Configuration <br/>
 The FireBase's configuration is an object with you firebase config.<br/>
-FireBaseSettings.js
+FireBaseSettings.js <br/><br/>
 
 More information <br/>
 If you want more information about the project, please take a look at package.json wich has all the dependencies used.
