@@ -16,8 +16,7 @@ A React Native Drawer Navigation Template for using with some of the most useful
 
 # Where's the Redux?
 
-You can find the Redux's configuration at <br/>
-<b> Router.js <b/> <br/><br/>
+You can find the Redux's configuration at Router.js <br/><br/>
 
 This file is wrapping all the application with Provider component.
 
@@ -36,3 +35,6 @@ The FireBase's configuration is an object with you firebase config.<br/><br/>
 
 More information <br/>
 If you want more information about the project, please take a look at package.json wich has all the dependencies used.
+
+# A Template Preview
+![alt text](https://github.com/andersoncscz/React-Native-Drawer-Navigation-Template/blob/master/GifAPP.gif)
