@@ -32,17 +32,19 @@ You can find the Redux's configuration at <br/>
 
 This file is wrapping all the application with <b>Provider<b/> component.
 
-<b> Router Configuration <b/><br/>
+# Configuration Files
+These are the main files you will need to change during the development.
+Router Configuration <br/>
 The Router's configuration takes care of the screens and navigation. <br/>
-<b> RouterSettings.js <b/>
+RouterSettings.js
 
-<b> Drawer Navigation Configuration <b/>
+Drawer Navigation Configuration <br/>
 The DrawerNavigationSettings' configuration takes care of the layout. <br/>
-<b> DrawerNavigationSettings.js <b/>
+DrawerNavigationSettings.js
 
-<b> FireBase Configuration <b/>
+FireBase Configuration <br/>
 The FireBase's configuration is an object with you firebase config.<br/>
-<b> FireBaseSettings.js <b/>
+FireBaseSettings.js
 
-<b> More information <b/> <br/>
+More information <br/>
 If you want more information about the project, please take a look at package.json wich has all the dependencies used.
