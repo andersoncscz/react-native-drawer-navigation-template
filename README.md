@@ -24,7 +24,7 @@ npm install redux --save <br/>
 npm install redux-thunk --save <br/>
 npm install remote-redux-devtools --save (Powerful extension for Chrome that helps a lot <br/>
 
-#### 4. Finally run <br/>
+#### 3. Finally run <br/>
 react-native run-android <br/>
 
 # Redux
@@ -36,13 +36,13 @@ New reducers must be imported and included in .../src/reducers/index.js.
 
 #### These are the main files you will need to change during the development.
 #### RouterSettings.js
-The Router's configuration is resposible for the screens you will create and the navigation between them. <br/>
+The Router's configuration is resposible for the screens you will create and the navigation between them.
 
 #### DrawerNavigationSettings.js
-The DrawerNavigationSettings' configuration is resposible for the drawer navigation layout. <br/>
+The DrawerNavigationSettings' configuration is resposible for the drawer navigation layout.
 
 #### FireBaseSettings.js
-The FireBase's configuration is resposible for the firebase config. <br/>
+The FireBase's configuration is resposible for the firebase config.
 
 #### More information
 If you want more information about the project, please take a look at package.json wich has all the dependencies used.
