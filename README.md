@@ -28,24 +28,23 @@ npm install remote-redux-devtools --save (Powerful extension for Chrome that hel
 react-native run-android <br/>
 
 # Redux
-You can find the Redux's configuration at DrawerNavigatorApp.js. <br/>
-This file already has a rootReducer and two midlewares set up. All the application is being wrapped by the Provider component. <br/>
-The DrawerNavigatorApp.js is imported by App.js wich is responsible to render the app. <br/>
+#### DrawerNavigatorApp.js
+In this file you can find the Redux's configuration, where the entire application is being wrapped by the Provider component. This file already has a rootReducer and two midlewares set up. <br/>
+New reducers must be imported and included in .../src/reducers/index.js.
 
 # Configuration
 
-#### These are the main files you will need to change during the development.<br/><br/>
-RouterSettings.js <br/>
-The Router's configuration takes care of the screens and navigation. <br/><br/>
+#### These are the main files you will need to change during the development.
+#### RouterSettings.js
+The Router's configuration is resposible for the screens you will create and the navigation between them. <br/>
 
+#### DrawerNavigationSettings.js
+The DrawerNavigationSettings' configuration is resposible for the drawer navigation layout. <br/>
 
-DrawerNavigationSettings.js <br/>
-The DrawerNavigationSettings' configuration takes care of the layout. <br/><br/>
+#### FireBaseSettings.js
+The FireBase's configuration is resposible for the firebase config. <br/>
 
-FireBaseSettings.js <br/>
-The FireBase's configuration is an object with you firebase config.<br/><br/>
-
-#### More information <br/>
+#### More information
 If you want more information about the project, please take a look at package.json wich has all the dependencies used.
 
 # A Template Preview
