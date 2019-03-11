@@ -1,6 +1,6 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import Router from './Router';
-
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
@@ -16,6 +16,8 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 export default DrawerNavigatorApp = props => (
     <Provider store={store}>
-        <Router />
-    </Provider>   
+        <Router>
+            
+        </Router>
+    </Provider>          
 );

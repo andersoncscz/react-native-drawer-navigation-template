@@ -1,9 +1,7 @@
-
 import { 
-    createDrawerNavigator, 
+    createDrawerNavigator,
     createAppContainer 
 } from 'react-navigation';
-
 
 import ROUTER_CONFIG from './settings/RouterSettings';
 

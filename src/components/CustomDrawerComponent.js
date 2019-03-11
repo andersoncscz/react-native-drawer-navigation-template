@@ -7,8 +7,7 @@ import {
     View,
     Text,
     Image,
-    ImageBackground,   
-    StatusBar 
+    ImageBackground
 } from 'react-native';
 
 import { DrawerItems } from 'react-navigation';
@@ -18,7 +17,6 @@ const avatarImagePath = require('../images/profile_picture2.jpg');
 
 export const customDrawerComponent = props => (
     <ScrollView>
-        <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0.20)" animated />
         <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
             <ImageBackground 
                 style={[styles.container, styles.backgroundImageDrawer]}

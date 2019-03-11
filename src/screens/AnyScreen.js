@@ -1,17 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
-import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React, { Component } from 'react';
+import { StyleSheet, Text, SafeAreaView, View, DatePickerAndroid, Platform } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import CustomStatusBar from '../components/CustomStatusBar';
 
 export default class HomeScreen extends Component {
 
@@ -19,40 +10,60 @@ export default class HomeScreen extends Component {
         super(props);
     }
 
+    openDatePicker = async () => {
+        try {
+            //DatePickerAndroid.mode='calendar';
+            const {action, year, month, day} = await DatePickerAndroid.open({
+              date: new Date(2019, 1, 15),
+              mode:'default'
+            });
+            if (action !== DatePickerAndroid.dismissedAction) {
+              // Selected year, month (0-11), day
+            }
+          } catch ({code, message}) {
+            console.warn('Cannot open date picker', message);
+          }        
+    }
+
     render() {
 
-        const { headerText, contentText, instructions } = this.props.navigation.state.params;
+        const { headerText } = this.props.navigation.state.params;
 
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}> { headerText } </Text>
-                <Text style={styles.instructions}> { contentText } </Text>
-                <Text style={styles.instructions}> { instructions } </Text>
-                <ActionButton 
-                    buttonColor="#03A9F4"
-                    fixNativeFeedbackRadius={true}>
-                    <ActionButton.Item buttonColor='#536DFE' title="Share with Friends" onPress={() => console.log("Share tapped!")} >
-                        <Icon solid name="share-alt" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#F44336' title="Open Mail" onPress={() => {}}>
-                        <Icon solid name="envelope" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#7B1FA2' title="Liked Items" onPress={() => {}}>
-                        <Icon solid name="heart" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                </ActionButton>
+            <View style={styles.mainContainer}>
+                <CustomStatusBar />
+                <SafeAreaView style={styles.container}>
+                    <Text style={styles.welcome}> { headerText } </Text>
+                    <Text style={styles.instructions}> {'... some content here ...'} </Text>
+                    <Text style={styles.instructions}> {'React is awesome :)'} </Text>
+                    <ActionButton 
+                        buttonColor="#03A9F4"
+                        fixNativeFeedbackRadius={true}>
+                        <ActionButton.Item buttonColor='#03A9F4' title="Share with Friends" onPress={() => alert("Share tapped!")} >
+                            <Icon solid name="share-alt" style={styles.actionButtonIcon} />
+                        </ActionButton.Item>
+                        <ActionButton.Item buttonColor='#03A9F4' title="Open Calendar" onPress={() => this.openDatePicker()}>
+                            <Icon solid name="calendar" style={styles.actionButtonIcon} />
+                        </ActionButton.Item>
+                        <ActionButton.Item buttonColor='#03A9F4' title="Liked Items" onPress={() => {}}>
+                            <Icon solid name="heart" style={styles.actionButtonIcon} />
+                        </ActionButton.Item>
+                    </ActionButton>
+                </SafeAreaView>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    
+    mainContainer: {
+        flex: 1,     
+    },
+
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#F5FCFF',       
     },
 
     welcome: {
@@ -71,6 +82,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         height: 22,
         color: 'white',
-      },    
+    }
 
 });

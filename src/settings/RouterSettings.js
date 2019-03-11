@@ -1,91 +1,72 @@
 import React from 'react';
-
-import AnyScreen from '../screens/AnyScreen';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { 
+    HomeStack, 
+    MyAccountStack, 
+    ChatStack, 
+    ShoppingStack, 
+    AnalyticsStack, 
+    SettingsStack 
+} from '../settings/StackNavigatorSettings';
 
 export default ROUTE_CONFIG = {
-
+    
     Home: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'Home Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },
+        screen: HomeStack,
         navigationOptions: ({ navigation }) => ({
             title: 'Home',
-            drawerIcon: ({ tintColor }) => (<Icon name="home" size={20} color={ tintColor } />)
-        }),        
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'home', size: 20, tintColor, solid: true }) // Text shown in the item of drawer navigator
+        }),  
     },
-    
 
     MyAccount: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'My Account Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },        
+        screen: MyAccountStack,
         navigationOptions: ({ navigation }) => ({
             title: 'My Account',
-            drawerIcon: ({ tintColor }) => (<Icon solid name="user-circle" size={20} color={ tintColor } />)
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'user-circle', size: 20, tintColor, solid: true })
         }),                
     },
 
 
     Chat: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'Chat Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },        
+        screen: ChatStack, 
         navigationOptions: ({ navigation }) => ({
             title: 'Chat',
-            drawerIcon: ({ tintColor }) => (<Icon solid name="comments" size={20} color={ tintColor } />)
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'comments', size: 20, tintColor, solid: true })
         }),                
     },
     
 
     Shopping: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'Shopping Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },        
+        screen: ShoppingStack,
         navigationOptions: ({ navigation }) => ({
             title: 'Shopping',
-            drawerIcon: ({ tintColor }) => (<Icon name="shopping-cart" size={20} color={ tintColor } />)
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'shopping-cart', size: 20, tintColor, solid: true })
         }),                
     },
 
 
     Analytics: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'Analytics Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },        
+        screen: AnalyticsStack,     
         navigationOptions: ({ navigation }) => ({
             title: 'Analytics',
-            drawerIcon: ({ tintColor }) => (<Icon name="chart-pie" size={20} color={ tintColor } />)
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'chart-pie', size: 20, tintColor, solid: true })
         }),                
     },
 
 
     Settings: {
-        screen: AnyScreen,
-        params: { 
-            headerText: 'Settings Screen!',
-            contentText: '...some content...',
-            instructions: 'React is Awesome!!!',
-        },        
+        screen: SettingsStack,       
         navigationOptions: ({ navigation }) => ({
             title: 'Settings',
-            drawerIcon: ({ tintColor }) => (<Icon name="cog" size={20} color={ tintColor } />)
+            drawerIcon: ({ tintColor }) => drawerIcon({ iconName: 'cog', size: 20, tintColor, solid: true })
         }),                
     }     
 
+}
+
+const drawerIcon = ({ iconName, tintColor, size, solid }) => {
+    return (
+        <Icon name={iconName} size={size} solid={solid} color={tintColor} />
+    )
 }
